@@ -1,13 +1,15 @@
 function updateIphoneNumber(isIncresing) {
     const iPhoneInput = document.getElementById('iPhone_number');
-    const iPhoneNumber = iPhoneInput.value;
+    let iPhoneNumber = iPhoneInput.value;
     if (isIncresing) {
-        iPhoneInput.value = parseInt(iPhoneNumber) + 1;
+        iPhoneNumber = parseInt(iPhoneNumber) + 1;
     }
-    else {
-        iPhoneInput.value = parseInt(iPhoneNumber) - 1;
+    else if (iPhoneNumber > 0) {
+        iPhoneNumber = parseInt(iPhoneNumber) - 1;
     }
-
+    iPhoneInput.value = iPhoneNumber;
+    const priceTotal = document.getElementById('price_total');
+    priceTotal.innerText = iPhoneNumber * 1219;
 
 }
 
